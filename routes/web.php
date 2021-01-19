@@ -18,4 +18,12 @@ use App\Http\Controllers\BukuController;
 //     return view('home');
 // });
 
-Route::get('/', [BukuController::class, 'index']);
+Route::get('/', [BukuController::class, 'index'])->name('home');
+
+Route::post('/store', [BukuController::class, 'store'])->name('store');
+
+Route::put('/update', [BukuController::class, 'update'])->name('update');
+
+Route::delete('/destroy/{id}', [BukuController::class, 'destroy'])->name('destroy');
+
+Route::get('/pdf', [BukuController::class, 'createPDF'])->name('cetak_pdf');
